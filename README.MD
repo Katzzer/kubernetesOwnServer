@@ -1,4 +1,4 @@
-# Testing Kubernetes on own server
+# Kubernetes on own server
 
 ## How to run onw K8S
 - In Ubuntu install `microk8s`

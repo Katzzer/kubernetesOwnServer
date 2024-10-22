@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: photo-game-backend-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: photo-game-backend-api
+  template:
+    metadata:
+      labels:
+        app: photo-game-backend-api
+    spec:
+      containers:
+        - name: api
+          image: pavelkostal/photo-game-backend-api:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "h2"
+            - name: SPRING_OUTPUT_ANSI_ENABLED
+              value: "ALWAYS"
+            - name: LOGGING_LEVEL_COM_PAVELKOSTAL_API
+              value: "DEBUG"
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            failureThreshold: 3
