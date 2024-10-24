@@ -24,6 +24,10 @@ spec:
               value: "ALWAYS"
             - name: LOGGING_LEVEL_COM_PAVELKOSTAL_API
               value: "DEBUG"
+            - name: SPRING_REDIS_HOST
+              value: "redis"  # Redis service name
+            - name: SPRING_REDIS_PORT
+              value: "6379"
           readinessProbe:
             httpGet:
               path: /actuator/health
