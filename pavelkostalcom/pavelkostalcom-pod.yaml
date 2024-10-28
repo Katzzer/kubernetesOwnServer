@@ -1,10 +1,20 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: pavelkostalcom
 spec:
-  containers:
-    - name: pavelkostalcom
-      image: pavelkostal/pavelkostalcom
-      ports:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pavelkostalcom
+  template:
+    metadata:
+      labels:
+        app: pavelkostalcom
+    spec:
+      containers:
+      - name: pavelkostalcom
+        image: pavelkostal/pavelkostalcom
+        ports:
         - containerPort: 3000
+
