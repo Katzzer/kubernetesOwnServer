@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: photo-game-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: photo-game-frontend
+  template:
+    metadata:
+      labels:
+        app: photo-game-frontend
+    spec:
+      containers:
+      - name: photo-game-frontend
+        image: pavelkostal/photo-game-frontend
+        ports:
+        - containerPort: 3000
+
