@@ -32,4 +32,4 @@ jobs:
         with:
           context: ./frontend-demo-app
           push: true
-          tags: pavelkostal/photo-game-frontend:latest
+          tags: pavelkostal/k8s-frontend-demo-app:latest
