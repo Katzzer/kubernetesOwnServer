@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'frontend-demo-app/**'
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   docker:
