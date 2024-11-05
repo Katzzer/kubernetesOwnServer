@@ -1,0 +1,12 @@
+services:
+  k8s-backend-demo-app:
+    image: pavelkostal/k8s-backend-demo-app:latest
+    container_name: photo-game-backend-api
+    ports:
+      - "8080:8080"
+
+  k8s-frontend-demo-app:
+    image: pavelkostal/k8s-frontend-demo-app:latest
+    container_name: photo-game-frontend-api
+    ports:
+      - "3000:3000"

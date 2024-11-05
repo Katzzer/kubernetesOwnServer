@@ -7,7 +7,6 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 @RestController
-@CrossOrigin(origins = ["http://127.0.0.1:5173"])
 class PageController {
 
 
