@@ -4,9 +4,7 @@ on:
   push:
     paths:
       - 'backend-demo-app/**'
-  pull_request:
-    paths:
-      - 'backend-demo-app/**'
+    branches: [ main ]
 
 jobs:
   docker:
