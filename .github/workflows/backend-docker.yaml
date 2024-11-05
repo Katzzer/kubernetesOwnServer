@@ -1,3 +1,13 @@
+name: Backend Workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend-demo-app/**'
+  workflow_dispatch:
+
 jobs:
   docker:
     runs-on: ubuntu-latest
