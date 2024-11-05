@@ -1,12 +1,15 @@
 package com.pavelkostal.demok8sapp.controller
 
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 @RestController
+@CrossOrigin(origins = ["http://127.0.0.1:5173"])
 class PageController {
+
 
     @GetMapping("")
     fun showMessage():String {
