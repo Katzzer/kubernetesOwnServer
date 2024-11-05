@@ -2,9 +2,10 @@ name: Frontend Workflow
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'frontend-demo-app/**'
-  branches: [ main ]
 
 jobs:
   docker:
