@@ -19,8 +19,8 @@ COPY . .
 # Přidáme argument pro proměnnou prostředí
 ARG VITE_API_URL
 
-# Nastavíme proměnnou prostředí
-ENV VITE_API_URL=$VITE_API_URL
+# Vyexportujeme proměnnou v rámci build procesu
+RUN echo "VITE_API_URL=$VITE_API_URL" > .env
 
 # Postavíme aplikaci
 RUN npm run build
