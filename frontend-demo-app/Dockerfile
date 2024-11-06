@@ -1,26 +1,32 @@
-# Use an official Node.js runtime as a parent image
+# Použijeme Node.js runtime jako základní image
 FROM node:18-alpine
 
-# Set the working directory in the container
+# Nastavíme pracovní adresář v kontejneru
 WORKDIR /app
 
-# Copy package.json and package-lock.json (if available)
+# Zkopírujeme package.json a package-lock.json (pokud je k dispozici)
 COPY package*.json ./
 
-# Install dependencies
+# Nainstalujeme závislosti
 RUN npm install
 
-# Globally install 'serve' to serve the built files
+# Globálně nainstalujeme 'serve' pro servírování vybuilděných souborů
 RUN npm install -g serve
 
-# Copy the rest of the application code into the container
+# Zkopírujeme zbytek aplikačního kódu do kontejneru
 COPY . .
 
-# Build the application
+# Přidáme argument pro proměnnou prostředí
+ARG VITE_API_URL
+
+# Nastavíme proměnnou prostředí
+ENV VITE_API_URL=$VITE_API_URL
+
+# Postavíme aplikaci
 RUN npm run build
 
-# Make port 3000 available to the world outside this container
+# Zpřístupníme port 3000 ven
 EXPOSE 3000
 
-# Serve the built files with 'serve'
+# Servírujeme vybuilděné soubory pomocí 'serve'
 CMD [ "serve", "-s", "dist" ]

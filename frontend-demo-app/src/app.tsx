@@ -6,7 +6,9 @@ export function App() {
   const [messageFromBackend, setMessageFromBackend] = useState('')
 
     function getBackendUrl() {
-        return import.meta.env.VITE_API_URL;
+        const viteapiurl = import.meta.env.VITE_API_URL;
+        console.log(viteapiurl)
+        return viteapiurl;
     }
 
     async function sendTestingRequestToBackend() {
