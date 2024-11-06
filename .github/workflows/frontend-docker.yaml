@@ -33,3 +33,5 @@ jobs:
           context: ./frontend-demo-app
           push: true
           tags: pavelkostal/k8s-frontend-demo-app:latest
+          build-args:
+            VITE_API_URL: http://k8s-backend-demo-app:8080

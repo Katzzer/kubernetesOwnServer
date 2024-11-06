@@ -7,7 +7,7 @@ export function App() {
 
     function getBackendUrl() {
         const viteapiurl = import.meta.env.VITE_API_URL;
-        console.log('viteapiurl' + viteapiurl)
+        console.log('viteapiurl = ' + viteapiurl)
         return viteapiurl;
     }
 
