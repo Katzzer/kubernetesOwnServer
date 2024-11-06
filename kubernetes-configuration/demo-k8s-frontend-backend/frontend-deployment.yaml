@@ -17,7 +17,9 @@ spec:
           image: pavelkostal/k8s-frontend-demo-app:latest
           ports:
             - containerPort: 3000
-
+          env:
+            - name: VITE_API_URL
+              value: "http://k8s-backend-demo-app:8080"
 ---
 
 apiVersion: v1

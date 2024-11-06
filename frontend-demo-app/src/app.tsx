@@ -5,19 +5,23 @@ import {useState} from "react";
 export function App() {
   const [messageFromBackend, setMessageFromBackend] = useState('')
 
-    async function sendTestingRequestToBackend() {
-      const BACKEND_URL = 'http://localhost:8080';
+    function getBackendUrl() {
+        return import.meta.env.VITE_API_URL;
+    }
 
-        const response= await axios.get(BACKEND_URL);
+    async function sendTestingRequestToBackend() {
+
+        const response= await axios.get(getBackendUrl());
         console.log(response.data);
         setMessageFromBackend(response.data);
     }
 
   return (
     <>
+        <div style={'margin-bottom: 20px'}>Backend url is: <b>{getBackendUrl()}</b></div>
         <button onClick={sendTestingRequestToBackend}>Get data from backend</button>
         <br/>
-        {messageFromBackend && <div>Message from backend = {messageFromBackend}</div>}
+        {messageFromBackend && <div style={'margin-top: 20px'}>Message from backend = {messageFromBackend}</div>}
         <br/>
     </>
   )
