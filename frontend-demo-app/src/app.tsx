@@ -6,7 +6,8 @@ export function App() {
   const [messageFromBackend, setMessageFromBackend] = useState('')
 
     function getBackendUrl() {
-        const viteApiUrl = import.meta.env.VITE_API_URL || 'http://k8s-backend-demo-app:8080';
+        // const viteApiUrl = import.meta.env.VITE_API_URL || 'http://k8s-backend-demo-app:8080';
+        const viteApiUrl = 'http://k8s-backend-demo-app:8080';
         console.log('viteApiUrl = ' + viteApiUrl)
         return viteApiUrl;
     }
