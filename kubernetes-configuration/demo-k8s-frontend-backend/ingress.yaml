@@ -1,18 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-demo-app
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
+  name: backend-ingress
 spec:
   rules:
-    - host: my-app.com
+    - host: backend.example.com
       http:
         paths:
-          - pathType: Prefix
-            path: "/"
+          - path: /
+            pathType: Prefix
             backend:
               service:
-                name: my-service
+                name: k8s-backend-demo-app
                 port:
-                  number: 80
+                  number: 8080
