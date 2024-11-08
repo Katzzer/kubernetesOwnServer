@@ -7,7 +7,7 @@
       </configuration>
     </facet>
     <facet external-system-id="GRADLE" type="kotlin-language" name="Kotlin">
-      <configuration version="5" platform="JVM 17" allPlatforms="JVM [17]" useProjectSettings="false" pureKotlinSourceFolders="D:\Git\kubernetesOwnServer\backend-demo-app\src\main\kotlin;D:\Git\kubernetesOwnServer\backend-demo-app\src\test\kotlin">
+      <configuration version="5" platform="JVM 17" allPlatforms="JVM [17]" useProjectSettings="false">
         <additionalVisibleModuleNames>backend-demo-app:main</additionalVisibleModuleNames>
         <compilerSettings>
           <option name="additionalArguments" value="-java-parameters -Xjsr305=strict" />
