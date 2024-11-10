@@ -5,6 +5,7 @@ metadata:
   namespace: default
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/use-regex: "true"  # Add this line
 spec:
   rules:
     - host: backend.192.168.1.240.nip.io
