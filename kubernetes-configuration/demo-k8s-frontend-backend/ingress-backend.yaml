@@ -11,7 +11,7 @@ spec:
     - host: backend.192.168.1.241.nip.io
       http:
         paths:
-          - path: /
+          - path: /api
             pathType: Prefix
             backend:
               service:
